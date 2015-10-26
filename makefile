@@ -1,4 +1,3 @@
 q:
-	gcc srand.c -std=c99
-	clear
+	gcc srand.c util.c -std=c99
 	a.out

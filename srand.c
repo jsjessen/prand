@@ -5,8 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "util.h"
 
-//#define DEBUG
+#define DEBUG
 
 #ifndef DEBUG
     #define OUTPUT_SIZE 100
@@ -24,7 +25,6 @@
 
 int* serial_rand(const unsigned int n, const unsigned int s, 
                  const unsigned int P, const unsigned int a, const unsigned int b);
-void print_array(const unsigned int n, int arr[n]);
 
 int main(int argc, char* argv[])
 {
@@ -59,6 +59,7 @@ int* serial_rand(const unsigned int n, const unsigned int s,
          0 <= s && s < P))
     {
         putchar('\n');
+        fprintf(stderr, "Invalid input arguments for random number generation\n");
         printf("Usage:\n"
                "\t srand <output_size> <seed> <multiplier> <increment> <modulus>\n\n");
         printf("Conditions:\n"
@@ -68,11 +69,17 @@ int* serial_rand(const unsigned int n, const unsigned int s,
                "\t 0 <= b < P\n" 
                "\t 0 <= s < P\n");
         putchar('\n');
-        exit(1);
+        return NULL;
     }
 
-    // Generate random numbers using the Linear Congruential generating model
     int* rands = malloc(n * sizeof(int));
+    if(rands < 0)
+    {
+        perror("Failed to allocate memory for random number array");
+        return NULL;
+    }
+    
+    // Generate random numbers using the Linear Congruential generating model
     int prev = s;
     for(int i = 0; i < n; i++)
     {
@@ -80,17 +87,4 @@ int* serial_rand(const unsigned int n, const unsigned int s,
         prev = rands[i];
     }
     return rands;
-}
-
-void print_array(const unsigned int n, int arr[n])
-{
-    // Print input array
-    putchar('\n');
-    for(int i = 1; i <= n; i++)
-    {
-        printf(" %10d", arr[i-1]);
-        if(i % 10 == 0)
-            putchar('\n');
-    }
-    putchar('\n');
 }
