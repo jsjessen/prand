@@ -1,5 +1,4 @@
-# prand
-Parallel Random Number Generator
+#Parallel Random Number Generator
 
 Project 3 - Due date: 10/27/2015 (Tuesday, 11:59pm PT)via OSBLE dropbox
 =======================================================================
@@ -37,8 +36,15 @@ int P = 2147483647 (largest signed 32-bit prime)
     c) Make matrix M
     d) Make identity matrix
     e) Make an array of size n filled with M's, except the first element is an identity matrix
-
-    x) Output: Array of n random numbers (call and print to stdout)
+    f) Use parallel prefix
+    g) Have each proc perform serial computation on its block
+    h) Gather the random numbers to rank 0
+    i) Output an array of n random numbers (call and print to stdout)
+6) Compare to serial random number generator
+7) Debug
+8) Analyze the performance between srand and prand
+9) Produce report
+10) Submit
 
 =======================================================================
 
