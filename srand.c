@@ -47,8 +47,8 @@ int* serial_rand(const unsigned int n, const unsigned int s,
 {
     // Show the parameters being used 
     printf("\n"
-           "seed = %d\n" 
            "output_size = %d\n"
+           "seed = %d\n" 
            "modulus = %d, multiplier = %d, increment = %d\n", n, s, P, a, b);  
 
     // Verify input is valid
