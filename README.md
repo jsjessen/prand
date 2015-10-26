@@ -29,8 +29,8 @@ int P = 2147483647 (largest signed 32-bit prime)
 2. Test serial script and make sure it is working, since it will be used to test the parallel version
 3. Create matrix multiplication function, also locally (small, so serial)
 4. Modify the matrix multiplication function to mod by P after ever addition 
-4. Create parallel prefix function (must use MPI)
-5. Create random number generator:
+5. Create parallel prefix function (must use MPI)
+6. Create random number generator:
     1. Get input a, b, P, seed as command line args
     2. Broadcast input to all procs 
     3. Make matrix M
@@ -40,10 +40,9 @@ int P = 2147483647 (largest signed 32-bit prime)
     7. Have each proc perform serial computation on its block
     8. Gather the random numbers to rank 0
     9. Output an array of n random numbers (call and print to stdout)
-6. Compare to serial random number generator
-7. Debug
-8. Analyze the performance between srand and prand
-9. Produce report
+7. Compare to serial random number generator
+8. Debug
+9. Analyze the performance between srand and prand
 10. Submit
 
 =======================================================================
