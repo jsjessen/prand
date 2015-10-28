@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-int* serial_rand(const unsigned int n, const unsigned int s, 
+int* parallel_rand(const unsigned int n, const unsigned int s, 
                  const unsigned int P, const unsigned int a, const unsigned int b) 
 {
     // Show the parameters being used 

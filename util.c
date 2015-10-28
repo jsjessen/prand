@@ -16,6 +16,16 @@ void print_array(const unsigned int n, int arr[n])
     putchar('\n');
 }
 
+void print_array_by_line(const unsigned int n, int arr[n])
+{
+    if(!arr)
+        return;
+
+    // Print input array
+    for(int i = 0; i <= n; i++)
+        printf("%d\n", arr[i]);
+}
+
 void print_matrix(const int nrow, const int ncol, int** matrix)
 {
     putchar('\n');
@@ -64,4 +74,10 @@ int** mult_matrix(const unsigned int nrow1, const unsigned int ncol1, int M1[nro
         }
     }
     return product;
+}
+ 
+// log base 2
+double log2(double x)
+{
+    return log(p) / log(2);
 }
