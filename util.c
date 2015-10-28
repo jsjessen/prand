@@ -22,7 +22,7 @@ void print_array_by_line(const unsigned int n, int arr[n])
         return;
 
     // Print input array
-    for(int i = 0; i <= n; i++)
+    for(int i = 0; i < n; i++)
         printf("%d\n", arr[i]);
 }
 
@@ -79,5 +79,5 @@ int** mult_matrix(const unsigned int nrow1, const unsigned int ncol1, int M1[nro
 // log base 2
 double log2(double x)
 {
-    return log(p) / log(2);
+    return log(x) / log(2);
 }
